@@ -1,9 +1,9 @@
 from paramiko import SSHClient
 import os
 
-IP = '127.0.0.1'
-USER = 'montana'
-PASSWORD = 'kCk7b5SaBPUkibDzcDa8bcKvb'
+IP = os.environ.get('SERVER_IP')
+USER = os.environ.get('SERVER_USER')
+PASSWORD = os.environ.get('SERVER_PASS')
 
 client = SSHClient()
 client.load_system_host_keys()
@@ -12,7 +12,7 @@ client.connect(IP, username=USER, password=PASSWORD)
 stdin, stdout, stderr = client.exec_command(
     'cd /montana/anti_hack; chmod 000 anti_hack.txt'
     )
-
+# La flag es: pVXk2AmfUpEIDWGyibkid9MH7
 print(f'STDOUT: {stdout.read().decode("utf8")}')
 print(f'STDERR: {stderr.read().decode("utf8")}')
 
