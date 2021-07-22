@@ -12,10 +12,9 @@ client.connect(IP, username=USER, password=PASSWORD)
 stdin, stdout, stderr = client.exec_command(
     'cd /montana/anti_hack; chmod 000 anti_hack.txt'
     )
-# La flag es: pVXk2AmfUpEIDWGyibkid9MH7
+
 print(f'STDOUT: {stdout.read().decode("utf8")}')
 print(f'STDERR: {stderr.read().decode("utf8")}')
-
 
 stdin.close()
 stdout.close()
