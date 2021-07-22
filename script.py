@@ -1,5 +1,5 @@
 from paramiko import SSHClient
-import os
+from os import environ
 
 IP = os.environ.get('SERVER_IP')
 USER = os.environ.get('SERVER_USER')
